@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getMovies(search = ''){
+  public getMovies(search = 'People'){
     return this.httpClient.get(`${this.authenticatedURL}&s=${search}`);
   }
 
