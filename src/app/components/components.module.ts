@@ -15,6 +15,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { NgbdModalComponent } from './modal/modal.component';
 import { NgbdModalContent } from './modal/modal.component';
 import { MovieViewComponent } from './movie-view/movie-view.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
     imports: [
@@ -34,7 +35,8 @@ import { MovieViewComponent } from './movie-view/movie-view.component';
         NotificationComponent,
         NgbdModalComponent,
         NgbdModalContent,
-        MovieViewComponent
+        MovieViewComponent,
+        MovieDetailsComponent
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]

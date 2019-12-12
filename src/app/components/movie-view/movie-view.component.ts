@@ -14,7 +14,6 @@ export class MovieViewComponent implements OnInit {
 
   ngOnInit() {
     this.api.getMovies(this.searchtxt).subscribe((data) => {
-      console.log(data);
       this.movies = data['Search'];
 
     });
@@ -22,10 +21,10 @@ export class MovieViewComponent implements OnInit {
   }
   search() {
     this.api.getMovies(this.searchtxt).subscribe((data) => {
-      console.log(data);
       this.movies = data['Search'];
 
     });
   }
+  
 
 }
