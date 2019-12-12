@@ -2,54 +2,54 @@
     <div class="page-header section-dark" style="background-image: url('assets/img/antoine-barres.jpg')">
         <div class="filter"></div>
         <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
+        <div class="content-center">
+            <div class="container" style="z-index: 1000; background: rgb(200, 200, 200, 0.4);">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input [(ngModel)]='searchtxt' (search)="search()" type="search" class="form-control" placeholder="People">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
 
-        <div class="row"></div>
-        <div class="container" style="z-index: 1000; background: rgb(200, 200, 200, 0.4);">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input [(ngModel)]='searchtxt' (search)="search()" type="search" class="form-control" placeholder="People">
+                            <button type="button" class="btn btn-danger btn-round" (click)="search()">Search</button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-9">
+                        <!-- <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination> -->
                     </div>
                 </div>
-                <div class="col-sm-2">
-                    <div class="form-group">
+                <div>
+                    <div class="row" style="background-color: #F5593D; color:white">
+                        <div class="col-sm-1">
 
-                        <button type="button" class="btn btn-danger btn-round" (click)="search()">Search</button>
+                        </div>
+                        <div class="col-sm-5">
+                            <h5>Title</h5>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5>Year</h5>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5>Type</h5>
+                        </div>
                     </div>
-                </div>
+                    <div class="row" *ngFor="let movie of movies" style="color: white" [routerLink]="['/movies',movie.imdbID]">
 
-                <div class="col-sm-9">
-                    <!-- <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination> -->
-                </div>
-            </div>
-            <div>
-                <div class="row" style="background-color: #F5593D; color:white">
-                    <div class="col-sm-1">
-
-                    </div>
-                    <div class="col-sm-5">
-                        <h5>Title</h5>
-                    </div>
-                    <div class="col-sm-3">
-                        <h5>Year</h5>
-                    </div>
-                    <div class="col-sm-3">
-                        <h5>Type</h5>
-                    </div>
-                </div>
-                <div class="row" *ngFor="let movie of movies" style="color: white" [routerLink]="['/movies',movie.imdbID]">
-
-                    <div class="col-sm-1">
-                        <img width="40px" src={{movie.Poster}} alt="Poster" />
-                    </div>
-                    <div class="col-sm-5">
-                        <h5>{{movie?.Title}}</h5>
-                    </div>
-                    <div class="col-sm-3">
-                        <h5>{{movie?.Year}}</h5>
-                    </div>
-                    <div class="col-sm-3">
-                        <h5>{{movie?.Type}}</h5>
+                        <div class="col-sm-1">
+                            <img class="img-responsive img-rounded" src={{movie.Poster}} alt="Poster" />
+                        </div>
+                        <div class="col-sm-5">
+                            <h5>{{movie?.Title}}</h5>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5>{{movie?.Year}}</h5>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5>{{movie?.Type}}</h5>
+                        </div>
                     </div>
                 </div>
             </div>
